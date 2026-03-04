@@ -65,7 +65,7 @@ export class AiService {
           yield { type: 'error', content: 'Access denied' };
           return;
         }
-        existingMessages = chat.messages as ChatMessage[];
+        existingMessages = (chat.messages as any) as ChatMessage[];
       }
     }
 
@@ -123,7 +123,7 @@ export class AiService {
         await this.prisma.aiChat.update({
           where: { id: chatId },
           data: {
-            messages: updatedMessages as unknown as Record<string, unknown>[],
+           messages: updatedMessages as any,
             ...(title && { title }),
           },
         });
@@ -132,7 +132,7 @@ export class AiService {
           data: {
             userId,
             title: title || 'New Analysis',
-            messages: updatedMessages as unknown as Record<string, unknown>[],
+       messages: updatedMessages as any,
           },
         });
         chatId = newChat.id;
