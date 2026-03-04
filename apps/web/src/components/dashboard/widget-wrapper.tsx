@@ -10,7 +10,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { ErrorBoundary, ErrorFallback } from "@/components/common/error-boundary";
 import { CardSkeleton } from "@/components/common/loading-skeleton";
 

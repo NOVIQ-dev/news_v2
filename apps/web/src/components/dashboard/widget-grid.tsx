@@ -31,7 +31,7 @@ import {
   Bell,
   Globe,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { WidgetWrapper } from "@/components/dashboard/widget-wrapper";
 import { MarketOverview } from "@/components/widgets/market-overview";
 import { NewsFeedWidget } from "@/components/widgets/news-feed-widget";
@@ -176,7 +176,7 @@ function SortableWidget({ widget }: SortableWidgetProps) {
         id={widget.id}
         title={widget.title}
         icon={widget.icon}
-        dragHandleProps={attributes}
+        dragHandleProps={{ ...attributes }}
         dragListeners={listeners}
       >
         {widget.component}

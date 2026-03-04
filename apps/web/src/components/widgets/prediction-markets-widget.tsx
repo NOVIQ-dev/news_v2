@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpDown, Calendar, DollarSign, TrendingUp } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { ListSkeleton } from "@/components/common/loading-skeleton";
 import type { PredictionMarket } from "@fintelligence/shared";
 

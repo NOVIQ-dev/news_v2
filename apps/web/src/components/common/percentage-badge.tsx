@@ -2,7 +2,7 @@
 
 import { ArrowDown, ArrowUp, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface PercentageBadgeProps {
   value: number;

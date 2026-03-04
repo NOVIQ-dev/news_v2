@@ -13,7 +13,7 @@ import {
   Bar,
   CartesianGrid,
 } from "recharts";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { ChartSkeleton } from "@/components/common/loading-skeleton";
 import type { OHLCV } from "@fintelligence/shared";
 
@@ -106,7 +106,7 @@ function CustomTooltip({
   label?: string;
 }) {
   if (!active || !payload?.length) return null;
-  const data = payload[0].payload;
+  const data = payload[0]!.payload;
 
   return (
     <div className="rounded-lg border border-white/[0.08] bg-[#0A0E1A]/95 px-3 py-2 shadow-xl backdrop-blur-xl">
@@ -148,7 +148,7 @@ export function PriceChart({
 
   const data = useMemo(() => generateMockData(activeRange), [activeRange]);
 
-  const priceChange = data.length >= 2 ? data[data.length - 1].price - data[0].price : 0;
+  const priceChange = data.length >= 2 ? data[data.length - 1]!.price - data[0]!.price : 0;
   const isPositive = priceChange >= 0;
   const gradientColor = isPositive ? "#00FF88" : "#FF4444";
 

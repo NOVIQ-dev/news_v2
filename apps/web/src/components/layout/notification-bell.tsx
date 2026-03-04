@@ -12,7 +12,7 @@ import {
   AlertCircle,
   ExternalLink,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
 // Types

@@ -1,18 +1,20 @@
 "use client";
 
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface SkeletonProps {
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export function Skeleton({ className }: SkeletonProps) {
+export function Skeleton({ className, style }: SkeletonProps) {
   return (
     <div
       className={cn(
         "animate-pulse rounded-md bg-white/[0.06]",
         className
       )}
+      style={style}
     />
   );
 }

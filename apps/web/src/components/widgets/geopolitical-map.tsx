@@ -11,9 +11,9 @@ import {
   MapPin,
   Loader2,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/common/loading-skeleton";
-import type { NewsRegion } from "@fintelligence/shared";
+
 
 // ---------------------------------------------------------------------------
 // Dynamic Leaflet imports (SSR disabled)
@@ -49,7 +49,7 @@ interface MapNewsEvent {
   summary: string;
   source: string;
   sourceUrl: string;
-  region: NewsRegion;
+  region: string;
   lat: number;
   lng: number;
   riskLevel: "low" | "medium" | "high";

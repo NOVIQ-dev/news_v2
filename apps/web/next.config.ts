@@ -18,6 +18,7 @@ const nextConfig: NextConfig = {
   transpilePackages: ["@fintelligence/shared"],
 
   experimental: {
+    turbopackFileSystemCacheForDev: true,
     optimizePackageImports: [
       "lucide-react",
       "recharts",

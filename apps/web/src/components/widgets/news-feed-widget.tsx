@@ -15,7 +15,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Skeleton, ListSkeleton } from "@/components/common/loading-skeleton";
 import { EmptyState } from "@/components/common/empty-state";
-import type { NewsArticle, NewsRegion, NewsSentiment } from "@fintelligence/shared";
+import type { NewsArticle, NewsRegion, NewsSentiment, NewsTag } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------
 // Mock data factory (avoids hydration mismatch from Date.now() at module scope)
@@ -33,7 +33,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://reuters.com",
       region: "EUROPE" as NewsRegion,
       additionalRegions: [],
-      tags: ["energy"],
+      tags: ["ENERGY" as NewsTag],
       sentiment: "negative" as NewsSentiment,
       sentimentScore: 0.72,
       relatedAssets: ["EUR/USD", "DAX"],
@@ -49,7 +49,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://bloomberg.com",
       region: "AMERICAS" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "positive" as NewsSentiment,
       sentimentScore: 0.85,
       relatedAssets: ["BTC", "ETH"],
@@ -65,7 +65,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://cnbc.com",
       region: "MIDDLE_EAST" as NewsRegion,
       additionalRegions: [],
-      tags: ["energy"],
+      tags: ["ENERGY" as NewsTag],
       sentiment: "negative" as NewsSentiment,
       sentimentScore: 0.68,
       relatedAssets: ["WTI"],
@@ -81,7 +81,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://wsj.com",
       region: "AMERICAS" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "neutral" as NewsSentiment,
       sentimentScore: 0.51,
       relatedAssets: ["SPX", "EUR/USD"],
@@ -97,7 +97,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://ft.com",
       region: "ASIA" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "positive" as NewsSentiment,
       sentimentScore: 0.79,
       relatedAssets: [],
@@ -113,7 +113,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://reuters.com",
       region: "EUROPE" as NewsRegion,
       additionalRegions: ["MIDDLE_EAST" as NewsRegion],
-      tags: ["war", "sanctions"],
+      tags: ["WAR" as NewsTag, "SANCTIONS" as NewsTag],
       sentiment: "neutral" as NewsSentiment,
       sentimentScore: 0.55,
       relatedAssets: ["XAU"],
@@ -129,7 +129,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://bloomberg.com",
       region: "EUROPE" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "negative" as NewsSentiment,
       sentimentScore: 0.74,
       relatedAssets: ["DAX"],
@@ -145,7 +145,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://coindesk.com",
       region: "AMERICAS" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "positive" as NewsSentiment,
       sentimentScore: 0.81,
       relatedAssets: ["ETH"],
@@ -161,7 +161,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://bbc.com",
       region: "CIS" as NewsRegion,
       additionalRegions: ["EUROPE" as NewsRegion],
-      tags: ["war"],
+      tags: ["WAR" as NewsTag],
       sentiment: "positive" as NewsSentiment,
       sentimentScore: 0.62,
       relatedAssets: ["XAU", "WTI"],
@@ -177,7 +177,7 @@ function createMockNews(): NewsArticle[] {
       sourceUrl: "https://marketwatch.com",
       region: "AMERICAS" as NewsRegion,
       additionalRegions: [],
-      tags: ["trade"],
+      tags: ["TRADE" as NewsTag],
       sentiment: "positive" as NewsSentiment,
       sentimentScore: 0.88,
       relatedAssets: ["SPX"],
@@ -200,11 +200,11 @@ const REGION_MAP: Record<string, string> = {
 };
 
 const TAG_MAP: Record<string, string> = {
-  war: "war",
-  sanctions: "sanctions",
-  energy: "energy",
-  elections: "elections",
-  trade: "trade",
+  war: "WAR",
+  sanctions: "SANCTIONS",
+  energy: "ENERGY",
+  elections: "ELECTIONS",
+  trade: "TRADE",
 };
 
 // ---------------------------------------------------------------------------
@@ -361,7 +361,7 @@ export function NewsFeedWidget({
       }
       if (selectedTag) {
         const tagKey = TAG_MAP[selectedTag];
-        if (tagKey && !article.tags?.includes(tagKey)) return false;
+        if (tagKey && !article.tags?.includes(tagKey as NewsTag)) return false;
       }
       return true;
     });
@@ -444,7 +444,7 @@ export function NewsFeedWidget({
                 ref={virtualizer.measureElement}
               >
                 <NewsItem
-                  article={filteredArticles[virtualItem.index]}
+                  article={filteredArticles[virtualItem.index]!}
                   index={virtualItem.index}
                 />
               </div>

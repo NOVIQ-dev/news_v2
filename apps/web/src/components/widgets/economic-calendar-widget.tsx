@@ -3,10 +3,10 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, Clock, AlertCircle } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { ListSkeleton } from "@/components/common/loading-skeleton";
 import { EmptyState } from "@/components/common/empty-state";
-import type { EconomicEvent } from "@fintelligence/shared";
+import type { EconomicEvent, EventImportance } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------
 // Country flag emojis
@@ -39,7 +39,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "FOMC Interest Rate Decision",
     country: "US",
     currency: "USD",
-    importance: "HIGH" as const,
+    importance: "HIGH" as unknown as EventImportance,
     scheduledAt: new Date(now + 2 * HOUR).toISOString(),
     forecast: "5.25%",
     previous: "5.50%",
@@ -54,7 +54,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "ECB Press Conference",
     country: "EU",
     currency: "EUR",
-    importance: "HIGH" as const,
+    importance: "HIGH" as unknown as EventImportance,
     scheduledAt: new Date(now + 5 * HOUR).toISOString(),
     forecast: undefined,
     previous: undefined,
@@ -69,7 +69,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "US Non-Farm Payrolls",
     country: "US",
     currency: "USD",
-    importance: "HIGH" as const,
+    importance: "HIGH" as unknown as EventImportance,
     scheduledAt: new Date(now + DAY + 3 * HOUR).toISOString(),
     forecast: "180K",
     previous: "216K",
@@ -84,7 +84,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "German CPI (MoM)",
     country: "DE",
     currency: "EUR",
-    importance: "MEDIUM" as const,
+    importance: "MEDIUM" as unknown as EventImportance,
     scheduledAt: new Date(now + DAY + 6 * HOUR).toISOString(),
     forecast: "0.3%",
     previous: "0.1%",
@@ -99,7 +99,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "UK GDP (QoQ)",
     country: "GB",
     currency: "GBP",
-    importance: "MEDIUM" as const,
+    importance: "MEDIUM" as unknown as EventImportance,
     scheduledAt: new Date(now + 2 * DAY + 4 * HOUR).toISOString(),
     forecast: "0.2%",
     previous: "-0.1%",
@@ -114,7 +114,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "Japan BOJ Rate Decision",
     country: "JP",
     currency: "JPY",
-    importance: "HIGH" as const,
+    importance: "HIGH" as unknown as EventImportance,
     scheduledAt: new Date(now + 3 * DAY + 2 * HOUR).toISOString(),
     forecast: "0.25%",
     previous: "0.25%",
@@ -129,7 +129,7 @@ const MOCK_EVENTS: EconomicEvent[] = [
     title: "US ISM Manufacturing PMI",
     country: "US",
     currency: "USD",
-    importance: "LOW" as const,
+    importance: "LOW" as unknown as EventImportance,
     scheduledAt: new Date(now + 4 * DAY).toISOString(),
     forecast: "49.5",
     previous: "47.8",

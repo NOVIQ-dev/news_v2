@@ -14,7 +14,7 @@ import {
   Zap,
   MessageSquare,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { TextSkeleton } from "@/components/common/loading-skeleton";
 
 // ---------------------------------------------------------------------------
@@ -217,7 +217,7 @@ export function AiQuickAnalyze({
 
   const simulateStreaming = useCallback((q: string) => {
     const fullText =
-      SAMPLE_RESPONSES[Math.floor(Math.random() * SAMPLE_RESPONSES.length)];
+      SAMPLE_RESPONSES[Math.floor(Math.random() * SAMPLE_RESPONSES.length)]!;
     let charIndex = 0;
 
     streamIntervalRef.current = setInterval(() => {

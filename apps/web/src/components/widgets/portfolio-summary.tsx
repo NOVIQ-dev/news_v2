@@ -15,7 +15,7 @@ import { TrendingUp, TrendingDown } from "lucide-react";
 import { AnimatedNumber } from "@/components/common/animated-number";
 import { PercentageBadge } from "@/components/common/percentage-badge";
 import { CardSkeleton } from "@/components/common/loading-skeleton";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import type { PortfolioSummary as PortfolioSummaryType, AssetType } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------

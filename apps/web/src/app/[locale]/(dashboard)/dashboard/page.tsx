@@ -59,7 +59,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" as const },
   },
 };
 
@@ -113,10 +113,10 @@ function StatCard({
             iconColor === "text-accent"
               ? "bg-accent/10"
               : iconColor === "text-positive"
-              ? "bg-positive/10"
-              : iconColor === "text-negative"
-              ? "bg-negative/10"
-              : "bg-info/10"
+                ? "bg-positive/10"
+                : iconColor === "text-negative"
+                  ? "bg-negative/10"
+                  : "bg-info/10"
           )}
         >
           <Icon className={cn("h-4 w-4", iconColor)} />
@@ -287,8 +287,8 @@ function LatestNewsWidget() {
     s === "positive"
       ? "bg-positive"
       : s === "negative"
-      ? "bg-negative"
-      : "bg-text-muted";
+        ? "bg-negative"
+        : "bg-text-muted";
 
   return (
     <div className="glass rounded-xl p-5">
@@ -359,8 +359,8 @@ function UpcomingEventsWidget() {
     i === "high"
       ? "bg-negative/10 text-negative"
       : i === "medium"
-      ? "bg-warning/10 text-warning"
-      : "bg-surface-light text-text-muted";
+        ? "bg-warning/10 text-warning"
+        : "bg-surface-light text-text-muted";
 
   return (
     <div className="glass rounded-xl p-5">

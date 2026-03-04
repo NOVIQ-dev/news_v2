@@ -305,6 +305,7 @@ function NewsPageContent() {
           >
             {virtualizer.getVirtualItems().map((virtualItem) => {
               const article = filteredArticles[virtualItem.index];
+              if (!article) return null;
               return (
                 <div
                   key={virtualItem.key}

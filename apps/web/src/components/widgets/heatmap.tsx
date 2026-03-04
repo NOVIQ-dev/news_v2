@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import type { HeatmapEntry, AssetType } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------

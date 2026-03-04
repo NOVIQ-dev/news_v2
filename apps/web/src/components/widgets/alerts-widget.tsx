@@ -13,10 +13,10 @@ import {
   AlertCircle,
   Clock,
 } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import { ListSkeleton } from "@/components/common/loading-skeleton";
 import { EmptyState } from "@/components/common/empty-state";
-import type { Alert, AlertStatus } from "@fintelligence/shared";
+import type { Alert, AlertStatus, AssetType, NewsRegion, NewsTag } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------
 // Mock data
@@ -29,7 +29,7 @@ const MOCK_ALERTS: Alert[] = [
     kind: "price",
     symbol: "BTC",
     assetName: "Bitcoin",
-    assetType: "CRYPTO",
+    assetType: "CRYPTO" as unknown as AssetType,
     condition: "ABOVE",
     targetValue: 95000,
     status: "active" as AlertStatus,
@@ -43,7 +43,7 @@ const MOCK_ALERTS: Alert[] = [
     kind: "price",
     symbol: "ETH",
     assetName: "Ethereum",
-    assetType: "CRYPTO",
+    assetType: "CRYPTO" as unknown as AssetType,
     condition: "BELOW",
     targetValue: 3300,
     status: "active" as AlertStatus,
@@ -57,7 +57,7 @@ const MOCK_ALERTS: Alert[] = [
     kind: "price",
     symbol: "XAU",
     assetName: "Gold",
-    assetType: "COMMODITY",
+    assetType: "COMMODITY" as unknown as AssetType,
     condition: "ABOVE",
     targetValue: 3000,
     status: "triggered" as AlertStatus,
@@ -72,8 +72,8 @@ const MOCK_ALERTS: Alert[] = [
     kind: "news",
     label: "Russia sanctions",
     keywords: ["Russia", "sanctions", "SWIFT"],
-    regions: ["CIS", "EUROPE"],
-    tags: ["SANCTIONS"],
+    regions: ["CIS" as unknown as NewsRegion, "EUROPE" as unknown as NewsRegion],
+    tags: ["SANCTIONS" as unknown as NewsTag],
     relatedAssets: ["XAU", "WTI"],
     status: "active" as AlertStatus,
     channels: ["in_app", "email", "push"],
@@ -85,7 +85,7 @@ const MOCK_ALERTS: Alert[] = [
     kind: "price",
     symbol: "WTI",
     assetName: "Crude Oil",
-    assetType: "COMMODITY",
+    assetType: "COMMODITY" as unknown as AssetType,
     condition: "PERCENT_CHANGE_DOWN",
     targetValue: 5,
     status: "triggered" as AlertStatus,

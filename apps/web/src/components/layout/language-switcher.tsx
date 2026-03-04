@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Check, Globe } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 import type { Locale } from "@fintelligence/shared";
 
 // ---------------------------------------------------------------------------
@@ -38,7 +38,7 @@ export function LanguageSwitcher({
   const [open, setOpen] = useState(false);
   const [locale, setLocale] = useState<Locale>(currentLocale);
 
-  const currentLanguage = LANGUAGES.find((l) => l.code === locale) || LANGUAGES[0];
+  const currentLanguage = LANGUAGES.find((l) => l.code === locale) ?? LANGUAGES[0]!;
 
   const handleSelect = useCallback(
     (code: Locale) => {

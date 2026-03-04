@@ -3,7 +3,7 @@
 import { useState, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { TrendingUp, TrendingDown, Newspaper } from "lucide-react";
-import { cn } from "@fintelligence/ui/lib/utils";
+import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
 // Types
