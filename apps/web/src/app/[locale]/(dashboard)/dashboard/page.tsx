@@ -450,7 +450,7 @@ export default function DashboardPage() {
       {/* Full-width Geopolitical Map at top */}
       <motion.div variants={itemVariants}>
         <Suspense fallback={<MapSkeleton />}>
-          <GeopoliticalMap />
+          <GeopoliticalMap key="main-dashboard-map" />
         </Suspense>
       </motion.div>
 
