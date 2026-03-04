@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/common/loading-skeleton";
-
 
 // ---------------------------------------------------------------------------
 // Dynamic Leaflet imports (SSR disabled)
@@ -271,6 +270,14 @@ export function GeopoliticalMap({
   const [selectedEvent, setSelectedEvent] = useState<MapNewsEvent | null>(null);
   const [mapReady, setMapReady] = useState(false);
 
+  // --- FIX ДЛЯ ОШИБКИ "Map container is already initialized" ---
+  // Этот ключ заставляет React полностью пересоздать контейнер карты при обновлении кода
+  const [hmrKey, setHmrKey] = useState(0);
+  useEffect(() => {
+    setHmrKey((prev) => prev + 1);
+  }, []);
+  // --------------------------------------------------------------
+
   if (isLoading) {
     return <MapLoadingFallback />;
   }
@@ -302,6 +309,7 @@ export function GeopoliticalMap({
       {/* Map */}
       <div className="relative h-80 overflow-hidden rounded-lg border border-white/[0.04]">
         <MapContainer
+          key={hmrKey} // Применяем динамический ключ здесь
           center={[30, 20]}
           zoom={2}
           minZoom={2}
