@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
-import dynamic from "next/dynamic";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Globe,
@@ -14,30 +13,14 @@ import {
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/common/loading-skeleton";
 
+// Leaflet CSS + default icon compatibility
+import "leaflet/dist/leaflet.css";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
+import "leaflet-defaulticon-compatibility";
 
-// ---------------------------------------------------------------------------
-// Dynamic Leaflet imports (SSR disabled)
-// ---------------------------------------------------------------------------
+// Direct react-leaflet imports (this component is already loaded with ssr:false)
+import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
 
-const MapContainer = dynamic(
-  () => import("react-leaflet").then((m) => m.MapContainer),
-  { ssr: false }
-);
-
-const TileLayer = dynamic(
-  () => import("react-leaflet").then((m) => m.TileLayer),
-  { ssr: false }
-);
-
-const CircleMarker = dynamic(
-  () => import("react-leaflet").then((m) => m.CircleMarker),
-  { ssr: false }
-);
-
-const Popup = dynamic(
-  () => import("react-leaflet").then((m) => m.Popup),
-  { ssr: false }
-);
 
 // ---------------------------------------------------------------------------
 // Types
@@ -270,8 +253,17 @@ export function GeopoliticalMap({
   const events = externalEvents ?? mockEvents;
   const [selectedEvent, setSelectedEvent] = useState<MapNewsEvent | null>(null);
   const [mapReady, setMapReady] = useState(false);
+  const mapInitialized = useRef(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  if (isLoading) {
+  useEffect(() => {
+    setIsMounted(true);
+    return () => {
+      mapInitialized.current = false;
+    };
+  }, []);
+
+  if (isLoading || !isMounted) {
     return <MapLoadingFallback />;
   }
 
@@ -302,6 +294,7 @@ export function GeopoliticalMap({
       {/* Map */}
       <div className="relative h-80 overflow-hidden rounded-lg border border-white/[0.04]">
         <MapContainer
+          key="geopolitical-map"
           center={[30, 20]}
           zoom={2}
           minZoom={2}
