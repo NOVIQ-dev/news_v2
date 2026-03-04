@@ -79,7 +79,8 @@ export class UsersService {
         ...(dto.language !== undefined && { language: dto.language }),
         ...(dto.theme !== undefined && { theme: dto.theme }),
         ...(dto.dashboardLayout !== undefined && {
-          dashboardLayout: dto.dashboardLayout,
+          // Исправлено: добавлено 'as any' для совместимости с типами JSON в Prisma
+          dashboardLayout: dto.dashboardLayout as any,
         }),
       },
       select: {
