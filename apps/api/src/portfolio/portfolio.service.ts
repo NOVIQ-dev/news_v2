@@ -50,7 +50,7 @@ export class PortfolioService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly marketService: MarketService,
-  ) {}
+  ) { }
 
   async findAll(userId: string): Promise<PortfolioItem[]> {
     return this.prisma.portfolio.findMany({
@@ -149,7 +149,7 @@ export class PortfolioService {
       };
     }
 
-    const symbols = [...new Set(items.map((item) => item.symbol))];
+    const symbols = [...new Set(items.map((item: PortfolioItem) => item.symbol))] as string[];
     const prices = await this.marketService.getPrices(symbols);
 
     const priceMap = new Map<string, number>();
@@ -160,7 +160,7 @@ export class PortfolioService {
     let totalValue = 0;
     let totalCost = 0;
 
-    const holdings = items.map((item) => {
+    const holdings = items.map((item: PortfolioItem) => {
       const currentPrice = priceMap.get(item.symbol) || 0;
       const value = item.amount * currentPrice;
       const cost = item.amount * item.buyPrice;

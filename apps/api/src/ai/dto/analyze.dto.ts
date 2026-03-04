@@ -8,7 +8,7 @@ export class AnalyzeDto {
   })
   @IsString()
   @MaxLength(4000)
-  message: string;
+  message!: string;
 
   @ApiPropertyOptional({
     description: 'Chat ID for continuing a conversation',

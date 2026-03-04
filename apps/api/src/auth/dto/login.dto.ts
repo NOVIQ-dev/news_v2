@@ -7,7 +7,7 @@ export class LoginDto {
     example: 'user@example.com',
   })
   @IsEmail()
-  email: string;
+  email!: string;
 
   @ApiProperty({
     description: 'User password',
@@ -15,5 +15,5 @@ export class LoginDto {
   })
   @IsString()
   @MinLength(8)
-  password: string;
+  password!: string;
 }

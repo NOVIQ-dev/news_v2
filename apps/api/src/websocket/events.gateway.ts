@@ -33,20 +33,19 @@ interface ClientInfo {
 })
 export class EventsGateway
   implements
-    OnGatewayInit,
-    OnGatewayConnection,
-    OnGatewayDisconnect,
-    OnModuleInit,
-    OnModuleDestroy
-{
+  OnGatewayInit,
+  OnGatewayConnection,
+  OnGatewayDisconnect,
+  OnModuleInit,
+  OnModuleDestroy {
   @WebSocketServer()
-  server: Server;
+  server!: Server;
 
   private readonly logger = new Logger(EventsGateway.name);
   private readonly clients = new Map<string, ClientInfo>();
   private subscriber: Redis | null = null;
 
-  constructor(private readonly configService: ConfigService) {}
+  constructor(private readonly configService: ConfigService) { }
 
   async onModuleInit(): Promise<void> {
     const redisUrl = this.configService.get<string>(

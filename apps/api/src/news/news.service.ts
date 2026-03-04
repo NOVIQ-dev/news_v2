@@ -105,7 +105,7 @@ export class NewsService {
     private readonly prisma: PrismaService,
     private readonly cacheService: CacheService,
     private readonly configService: ConfigService,
-  ) {}
+  ) { }
 
   getRssSources(): RssSource[] {
     return RSS_SOURCES;
@@ -263,7 +263,9 @@ export class NewsService {
 
     const summaryBlock = response.content[0];
     const summary =
-      summaryBlock.type === 'text' ? summaryBlock.text : 'Unable to generate summary';
+      summaryBlock && summaryBlock.type === 'text'
+        ? (summaryBlock as { type: 'text'; text: string }).text
+        : 'Unable to generate summary';
 
     // Update the article with the summary
     await this.prisma.newsCache.update({

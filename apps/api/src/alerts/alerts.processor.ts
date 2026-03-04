@@ -1,6 +1,6 @@
 import { Process, Processor } from '@nestjs/bull';
 import { Logger } from '@nestjs/common';
-import { Job } from 'bull';
+import { Job } from 'bullmq';
 import { AlertsService } from './alerts.service';
 import { MarketService } from '../market/market.service';
 
@@ -22,7 +22,7 @@ export class AlertsProcessor {
   constructor(
     private readonly alertsService: AlertsService,
     private readonly marketService: MarketService,
-  ) {}
+  ) { }
 
   @Process('check-alerts')
   async handleCheckAlerts(_job: Job<Record<string, never>>): Promise<CheckResult> {

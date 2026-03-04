@@ -69,7 +69,7 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1
       bullmq:
-        specifier: ^5.30.0
+        specifier: ^5.70.1
         version: 5.70.1
       class-transformer:
         specifier: ^0.5.1

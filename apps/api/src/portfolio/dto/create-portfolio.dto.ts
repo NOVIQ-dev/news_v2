@@ -15,7 +15,7 @@ export class CreatePortfolioDto {
   })
   @IsString()
   @MaxLength(20)
-  symbol: string;
+  symbol!: string;
 
   @ApiProperty({
     description: 'Asset name',
@@ -23,7 +23,7 @@ export class CreatePortfolioDto {
   })
   @IsString()
   @MaxLength(100)
-  name: string;
+  name!: string;
 
   @ApiProperty({
     description: 'Type of asset',
@@ -32,7 +32,7 @@ export class CreatePortfolioDto {
   })
   @IsString()
   @IsIn(['crypto', 'stock', 'commodity', 'forex', 'etf', 'bond'])
-  assetType: string;
+  assetType!: string;
 
   @ApiProperty({
     description: 'Amount of asset held',
@@ -40,7 +40,7 @@ export class CreatePortfolioDto {
   })
   @IsNumber()
   @IsPositive()
-  amount: number;
+  amount!: number;
 
   @ApiProperty({
     description: 'Buy price per unit',
@@ -48,7 +48,7 @@ export class CreatePortfolioDto {
   })
   @IsNumber()
   @IsPositive()
-  buyPrice: number;
+  buyPrice!: number;
 
   @ApiPropertyOptional({
     description: 'Currency',

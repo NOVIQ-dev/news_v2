@@ -32,16 +32,15 @@ interface PriceUpdate {
   },
 })
 export class MarketGateway
-  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect
-{
+  implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
-  server: Server;
+  server!: Server;
 
   private readonly logger = new Logger(MarketGateway.name);
   private priceInterval: NodeJS.Timeout | null = null;
   private subscribedSymbols = new Set<string>();
 
-  constructor(private readonly marketService: MarketService) {}
+  constructor(private readonly marketService: MarketService) { }
 
   afterInit(): void {
     this.logger.log('Market WebSocket Gateway initialized');

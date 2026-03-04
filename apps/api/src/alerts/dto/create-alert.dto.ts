@@ -7,7 +7,7 @@ export class AlertCondition {
     example: 'BTC',
   })
   @IsString()
-  symbol: string;
+  symbol!: string;
 
   @ApiProperty({
     description: 'Comparison operator',
@@ -16,13 +16,13 @@ export class AlertCondition {
   })
   @IsString()
   @IsIn(['above', 'below', 'crosses_above', 'crosses_below', 'percent_change'])
-  operator: string;
+  operator!: string;
 
   @ApiProperty({
     description: 'Threshold value',
     example: 50000,
   })
-  value: number;
+  value!: number;
 }
 
 export class CreateAlertDto {
@@ -33,14 +33,14 @@ export class CreateAlertDto {
   })
   @IsString()
   @IsIn(['price', 'volume', 'percent_change', 'news'])
-  type: string;
+  type!: string;
 
   @ApiProperty({
     description: 'Alert condition configuration',
     type: AlertCondition,
   })
   @IsObject()
-  condition: Record<string, unknown>;
+  condition!: Record<string, unknown>;
 
   @ApiPropertyOptional({
     description: 'Custom alert message',

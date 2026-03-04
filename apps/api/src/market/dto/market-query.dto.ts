@@ -7,7 +7,7 @@ export class MarketPricesQueryDto {
     example: 'BTC,ETH,GOLD',
   })
   @IsString()
-  symbols: string;
+  symbols!: string;
 }
 
 export class AssetParamDto {
@@ -16,7 +16,7 @@ export class AssetParamDto {
     example: 'BTC',
   })
   @IsString()
-  symbol: string;
+  symbol!: string;
 }
 
 export class HeatmapQueryDto {

@@ -1,7 +1,7 @@
 import { Process, Processor } from '@nestjs/bull';
 import { Logger } from '@nestjs/common';
-import { Job } from 'bull';
-import * as Parser from 'rss-parser';
+import { Job } from 'bullmq';
+import Parser from 'rss-parser';
 import { NewsService } from './news.service';
 
 interface RssFeedItem {
