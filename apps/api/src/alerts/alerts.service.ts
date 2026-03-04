@@ -50,7 +50,7 @@ export class AlertsService {
       data: {
         userId,
         type: dto.type,
-        condition: dto.condition,
+        condition: dto.condition as any,
         message: dto.message,
       },
     });
