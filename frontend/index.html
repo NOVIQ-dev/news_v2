@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVIQ News — Global Intelligence Platform</title>
+<meta name="description" content="NOVIQ News: Premium global news intelligence. Real-time analysis of geopolitics, markets, technology, and energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231E40AF'/%3E%3Cpath d='M8 22V10l5 8 5-8v12' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='16' r='3' fill='white'/%3E%3C/svg%3E">
+
+<style>
+  /* ============================================================
+     NOVIQ NEWS — DESIGN SYSTEM
+     Premium white/blue editorial intelligence platform
+     ============================================================ */
+
+  /* CSS Custom Properties — Semantic Token System */
+  :root {
+    /* Surfaces */
+    --bg: #FFFFFF;
+    --surface: #F8FAFD;
+    --surface-2: #EFF4FA;
+    --surface-hover: #E8F0FB;
+
+    /* Borders */
+    --border: #E2E8F0;
+    --border-light: #CBD5E1;
+
+    /* Text */
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+
+    /* Brand — Deep Royal Blue */
+    --primary: #1E40AF;
+    --primary-hover: #1D4ED8;
+    --primary-light: #DBEAFE;
+    --primary-glow: rgba(30, 64, 175, 0.1);
+
+    /* Semantic */
+    --success: #059669;
+    --error: #DC2626;
+    --warning: #D97706;
+
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-elevated: 0 8px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+    --shadow-strong: 0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);
+
+    /* Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+  }
+
+  /* Dark Mode */
+  [data-theme="dark"] {
+    --bg: #0B1120;
+    --surface: #111827;
+    --surface-2: #1E293B;
+    --surface-hover: #243044;
+    --border: #334155;
+    --border-light: #475569;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --primary: #3B82F6;
+    --primary-hover: #2563EB;
+    --primary-light: rgba(59, 130, 246, 0.12);
+    --primary-glow: rgba(59, 130, 246, 0.15);
+    --success: #10B981;
+    --error: #EF4444;
+    --warning: #F59E0B;
+    --shadow-subtle: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-elevated: 0 8px 32px rgba(0,0,0,0.5);
+    --shadow-strong: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  /* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+  /* ============================================================
+     TYPOGRAPHY UTILITIES
+     ============================================================ */
+  .text-xs { font-size: 12px; line-height: 1.4; }
+  .text-sm { font-size: 14px; line-height: 1.5; }
+  .text-base { font-size: 16px; line-height: 1.6; }
+  .text-lg { font-size: 18px; line-height: 1.5; }
+  .text-xl { font-size: 20px; line-height: 1.4; }
+  .text-2xl { font-size: 24px; line-height: 1.3; }
+  .text-3xl { font-size: 30px; line-height: 1.2; }
+
+  .font-normal { font-weight: 400; }
+  .font-medium { font-weight: 500; }
+  .font-semibold { font-weight: 600; }
+  .font-bold { font-weight: 700; }
+
+  .text-primary-color { color: var(--text-primary); }
+  .text-secondary-color { color: var(--text-secondary); }
+  .text-muted-color { color: var(--text-muted); }
+  .text-brand { color: var(--primary); }
+  .text-success { color: var(--success); }
+  .text-error { color: var(--error); }
+  .text-warning { color: var(--warning); }
+
+  .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+  /* ============================================================
+     COMPONENT LIBRARY
+     ============================================================ */
+
+  /* --- Badge --- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge-primary { background: var(--primary-light); color: var(--primary); }
+  .badge-breaking { background: #FEE2E2; color: var(--error); }
+  .badge-muted { background: var(--surface-2); color: var(--text-secondary); border: 1px solid var(--border); }
+  .badge-success { background: #D1FAE5; color: var(--success); }
+
+  /* --- Card --- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-subtle);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .card:hover {
+    border-color: rgba(30, 64, 175, 0.2);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  [data-theme="dark"] .card:hover { border-color: rgba(59, 130, 246, 0.3); }
+
+  /* --- Button --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-medium);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+  }
+
+  /* --- Pill Filter --- */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .pill:hover {
+    border-color: rgba(30, 64, 175, 0.4);
+    color: var(--primary);
+  }
+  .pill.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+  }
+
+  /* --- Section Header --- */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  /* --- Divider --- */
+  .divider { height: 1px; background: var(--border); }
+
+  /* --- Live Dot --- */
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--error);
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* ============================================================
+     NAVIGATION
+     ============================================================ */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s ease;
+  }
+  [data-theme="dark"] .navbar { background: rgba(11, 17, 32, 0.9); }
+
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap: 32px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    flex-shrink: 0;
+  }
+  .nav-logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+  .nav-link {
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+  }
+  .nav-link:hover { color: var(--text-primary); background: var(--surface-2); }
+  .nav-link.active { color: var(--primary); background: var(--primary-light); }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .search-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+    transition: all 0.2s ease;
+  }
+  .search-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+  .kbd {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: var(--border);
+    color: var(--text-muted);
+  }
+
+  .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .icon-btn:hover { background: var(--surface-2); border-color: var(--border); color: var(--text-primary); }
+
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .lang-selector:hover { border-color: var(--primary); color: var(--primary); }
+
+  /* Mobile nav */
+  .mobile-menu-btn { display: none; }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .search-btn span:not(.kbd) { display: none; }
+    .mobile-menu-btn { display: flex; }
+  }
+
+  /* ============================================================
+     BREAKING NEWS BAR
+     ============================================================ */
+  .breaking-bar {
+    background: #FEF2F2;
+    border-bottom: 1px solid #FECACA;
+    padding: 8px 0;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .breaking-bar { background: rgba(220,38,38,0.1); border-bottom-color: rgba(220,38,38,0.3); }
+
+  .breaking-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .breaking-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--error);
+    flex-shrink: 0;
+    padding: 2px 8px;
+    background: #FEE2E2;
+    border-radius: var(--radius-sm);
+  }
+  [data-theme="dark"] .breaking-label { background: rgba(220,38,38,0.2); }
+
+  .breaking-ticker {
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+
+  .breaking-track {
+    display: flex;
+    gap: 48px;
+    width: max-content;
+    animation: ticker-scroll 20s linear infinite;
+  }
+
+  .breaking-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+  .breaking-sep { color: var(--error); font-weight: 700; }
+
+  @keyframes ticker-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============================================================
+     HERO SECTION
+     ============================================================ */
+  .hero {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .hero-main {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: white;
+    margin-bottom: 12px;
+  }
+
+  .hero-excerpt {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .hero-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Hero sidebar */
+  .hero-sidebar { display: flex; flex-direction: column; gap: 16px; }
+
+  .hero-side-card {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .hero-side-card:hover {
+    border-color: rgba(30,64,175,0.25);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .hero-side-img {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--surface-2);
+  }
+
+  .hero-side-content { flex: 1; min-width: 0; }
+  .hero-side-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-image { height: 260px; }
+    .hero-sidebar { flex-direction: row; overflow-x: auto; }
+    .hero-side-card { min-width: 240px; }
+  }
+
+  /* ============================================================
+     MAIN CONTENT GRID
+     ============================================================ */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px 280px;
+    gap: 24px;
+    padding: 32px 0;
+    align-items: start;
+  }
+
+  @media (max-width: 1100px) {
+    .main-grid { grid-template-columns: 1fr 260px; }
+    .main-grid .sidebar { display: none; }
+  }
+  @media (max-width: 768px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .main-grid .trending-col { display: none; }
+  }
+
+  /* ============================================================
+     ARTICLE CARDS
+     ============================================================ */
+
+  /* Variant A: Large card with image */
+  .article-card-large {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .article-card-large:hover {
+    border-color: rgba(30,64,175,0.2);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  .article-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: var(--surface-2);
+  }
+  .article-body { padding: 20px; }
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .article-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .article-title:hover { color: var(--primary); }
+  .article-excerpt {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .article-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Variant B: Horizontal card with thumbnail */
+  .article-card-h {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .article-card-h:hover {
+    border-color: rgba(30,64,175,0.2);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+  .article-thumb {
+    width: 88px;
+    height: 72px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--surface-2);
+  }
+  .article-card-h .article-body { padding: 0; flex: 1; min-width: 0; }
+  .article-card-h .article-title { font-size: 14px; margin-bottom: 6px; }
+  .article-card-h .article-excerpt {
+    -webkit-line-clamp: 2;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .article-card-h .article-footer { padding-top: 8px; }
+
+  /* ============================================================
+     TRENDING COLUMN
+     ============================================================ */
+  .trending-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .trending-item:last-child { border-bottom: none; }
+  .trending-item:hover .trending-title { color: var(--primary); }
+
+  .trending-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 28px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .trending-item:hover .trending-num { color: var(--primary-light); }
+  [data-theme="dark"] .trending-item:hover .trending-num { color: rgba(59,130,246,0.3); }
+
+  .trending-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    transition: color 0.2s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ============================================================
+     SIDEBAR WIDGETS
+     ============================================================ */
+  .widget {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-subtle);
+  }
+  .widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .widget-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .widget-body { padding: 16px 20px; }
+
+  /* Market Pulse */
+  .market-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .market-card:last-child { border-bottom: none; }
+  .market-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .market-price { font-size: 13px; font-family: 'JetBrains Mono', monospace; color: var(--text-primary); font-weight: 500; }
+  .market-change {
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+  }
+  .market-change.up { background: #D1FAE5; color: var(--success); }
+  .market-change.down { background: #FEE2E2; color: var(--error); }
+  [data-theme="dark"] .market-change.up { background: rgba(16,185,129,0.15); }
+  [data-theme="dark"] .market-change.down { background: rgba(239,68,68,0.15); }
+
+  /* Predictions */
+  .prediction-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .prediction-item:last-child { border-bottom: none; }
+  .prediction-q { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; line-height: 1.4; }
+  .prediction-bar-wrap { position: relative; height: 6px; background: var(--surface-2); border-radius: var(--radius-full); margin-bottom: 4px; overflow: hidden; }
+  .prediction-bar-fill {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    border-radius: var(--radius-full);
+    background: var(--primary);
+    transition: width 0.6s ease;
+  }
+  .prediction-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .prediction-pct { font-weight: 700; color: var(--primary); font-family: 'JetBrains Mono', monospace; }
+
+  /* World Map */
+  .world-map-container {
+    background: var(--surface-2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    padding: 12px;
+  }
+  .world-map-svg { width: 100%; height: auto; opacity: 0.7; }
+  .region-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+  .region-item { display: flex; align-items: center; justify-content: space-between; }
+  .region-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .region-label { font-size: 12px; color: var(--text-secondary); }
+  .region-status { font-size: 11px; font-weight: 600; }
+
+  /* ============================================================
+     REGIONAL SECTION
+     ============================================================ */
+  .regional-section { padding: 40px 0; border-top: 1px solid var(--border); }
+  .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .regional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media (max-width: 900px) { .regional-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .regional-grid { grid-template-columns: 1fr; } }
+
+  .region-card {
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .region-card:hover { border-color: rgba(30,64,175,0.25); box-shadow: var(--shadow-medium); transform: translateY(-2px); }
+  .region-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .region-flag { font-size: 22px; }
+  .region-title { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+  .region-headline { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .region-footer { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-muted); }
+
+  /* ============================================================
+     INTELLIGENCE BRIEF
+     ============================================================ */
+  .intel-section { padding: 40px 0; border-top: 1px solid var(--border); background: var(--surface-2); }
+  .intel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+  @media (max-width: 900px) { .intel-grid { grid-template-columns: 1fr; } }
+
+  .intel-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-subtle);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .intel-card:hover { border-color: rgba(30,64,175,0.2); box-shadow: var(--shadow-medium); transform: translateY(-2px); }
+  .intel-icon { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--primary-light); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .intel-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .intel-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px; }
+  .intel-footer { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-muted); padding-top: 16px; border-top: 1px solid var(--border); }
+  .intel-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 2px 8px; border-radius: var(--radius-sm); }
+  .intel-badge-geo { background: #EDE9FE; color: #7C3AED; }
+  .intel-badge-market { background: #FEF3C7; color: #D97706; }
+  .intel-badge-security { background: #FEE2E2; color: var(--error); }
+
+  /* ============================================================
+     NEWS TICKER
+     ============================================================ */
+  .ticker-bar {
+    background: var(--primary);
+    padding: 8px 0;
+    overflow: hidden;
+  }
+  .ticker-inner { display: flex; align-items: center; gap: 16px; }
+  .ticker-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); flex-shrink: 0; white-space: nowrap;
+  }
+  .ticker-divider { width: 1px; height: 16px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+  .ticker-scroll { flex: 1; overflow: hidden; mask-image: linear-gradient(to right, transparent, white 3%, white 97%, transparent); }
+  .ticker-track {
+    display: flex; gap: 40px; width: max-content;
+    animation: ticker-scroll 30s linear infinite;
+  }
+  .ticker-item { font-size: 13px; font-weight: 500; color: white; white-space: nowrap; }
+  .ticker-sep { color: rgba(255,255,255,0.4); font-weight: 700; }
+
+  /* ============================================================
+     SEARCH MODAL
+     ============================================================ */
+  .search-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 80px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .search-overlay.active { opacity: 1; pointer-events: all; }
+
+  .search-modal {
+    width: 100%; max-width: 560px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-strong);
+    overflow: hidden;
+  }
+  .search-input-wrap {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .search-input {
+    flex: 1; border: none; background: transparent;
+    font-size: 16px; color: var(--text-primary); font-family: inherit;
+    outline: none;
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-suggestions { padding: 8px 0; }
+  .search-category {
+    padding: 8px 20px 4px;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .search-suggestion-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 20px;
+    font-size: 14px; color: var(--text-secondary);
+    cursor: pointer; transition: all 0.15s ease;
+  }
+  .search-suggestion-item:hover { background: var(--surface-2); color: var(--text-primary); }
+  .search-suggestion-item svg { color: var(--text-muted); flex-shrink: 0; }
+  .search-footer {
+    padding: 12px 20px; border-top: 1px solid var(--border);
+    display: flex; align-items: center; gap: 16px;
+    font-size: 12px; color: var(--text-muted);
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 48px 0 24px;
+    margin-top: 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 240px repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+
+  .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.65; margin: 12px 0 16px; }
+  .footer-col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 16px; }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-link { font-size: 13px; color: var(--text-muted); transition: color 0.2s ease; }
+  .footer-link:hover { color: var(--primary); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 24px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--text-muted);
+  }
+  @media (max-width: 600px) { .footer-bottom { flex-direction: column; gap: 12px; text-align: center; } }
+
+  /* ============================================================
+     SCROLL REVEAL ANIMATIONS
+     ============================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============================================================
+     SECTION SPACING
+     ============================================================ */
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .section-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+  }
+  .section-link:hover { gap: 8px; }
+
+  /* News feed layout */
+  .news-feed { display: flex; flex-direction: column; gap: 16px; }
+</style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 14V4l4 6 4-6v10" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="14" cy="9" r="2" fill="white"/>
+          </svg>
+        </div>
+        NOVIQ
+      </a>
+
+      <!-- Nav Links -->
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="#" class="nav-link">Markets</a>
+        <a href="#" class="nav-link">Geopolitics</a>
+        <a href="#" class="nav-link">Technology</a>
+        <a href="#" class="nav-link">Energy</a>
+        <a href="#" class="nav-link">Predictions</a>
+        <a href="#" class="nav-link">Analysis</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <!-- Search -->
+        <button class="search-btn" onclick="toggleSearch()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <span>Search...</span>
+          <span class="kbd">⌘K</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-btn" onclick="toggleTheme()" title="Toggle theme">
+          <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Language Selector -->
+        <div class="lang-selector" onclick="cycleLang()">
+          <span id="lang-flag">🇺🇸</span>
+          <span id="lang-code">EN</span>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </div>
+
+        <!-- Mobile Menu -->
+        <button class="icon-btn mobile-menu-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     BREAKING NEWS BAR
+     ============================================================ -->
+<div class="breaking-bar">
+  <div class="container">
+    <div class="breaking-inner">
+      <div class="breaking-label">
+        <span class="live-dot"></span>
+        BREAKING
+      </div>
+      <div class="breaking-ticker">
+        <div class="breaking-track" id="breaking-track">
+          <!-- Duplicated for seamless loop -->
+          <span class="breaking-item"><span class="breaking-sep">•</span> Fed signals potential rate cut in Q2 2026 amid cooling inflation data</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> NATO emergency summit convened following Baltic Sea incident</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> OpenAI announces GPT-5 with multimodal reasoning capabilities</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> OPEC+ extends production cuts through end of 2026</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> Fed signals potential rate cut in Q2 2026 amid cooling inflation data</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> NATO emergency summit convened following Baltic Sea incident</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> OpenAI announces GPT-5 with multimodal reasoning capabilities</span>
+          <span class="breaking-item"><span class="breaking-sep">•</span> OPEC+ extends production cuts through end of 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Main Featured Story -->
+      <div class="hero-main">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=80"
+          alt="Global Markets"
+          loading="eager"
+        >
+        <div class="hero-overlay">
+          <div class="hero-meta">
+            <span class="badge badge-breaking">Breaking</span>
+            <span class="badge badge-primary">Markets</span>
+          </div>
+          <h1 class="hero-title">Federal Reserve Signals Pivot: Rate Cuts Expected as Inflation Finally Cools to 2.1%</h1>
+          <p class="hero-excerpt">Markets surge on Fed commentary suggesting two to three rate reductions by year-end, the first policy reversal since the aggressive tightening cycle of 2023–2024.</p>
+          <div class="hero-footer">
+            <span>Reuters</span>
+            <span>•</span>
+            <span>12 min ago</span>
+            <span>•</span>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Sidebar Stories -->
+      <div class="hero-sidebar">
+
+        <div class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&q=70" alt="">
+          <div class="hero-side-content">
+            <div style="margin-bottom:6px"><span class="badge badge-muted">Technology</span></div>
+            <div class="hero-side-title">NVIDIA Unveils Blackwell Ultra: 30x Performance Leap for AI Inference</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:4px">Bloomberg • 34 min ago</div>
+          </div>
+        </div>
+
+        <div class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=160&q=70" alt="">
+          <div class="hero-side-content">
+            <div style="margin-bottom:6px"><span class="badge badge-muted">Geopolitics</span></div>
+            <div class="hero-side-title">Baltic Sea Incident Triggers NATO Emergency Consultation</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:4px">AP News • 1 hr ago</div>
+          </div>
+        </div>
+
+        <div class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=160&q=70" alt="">
+          <div class="hero-side-content">
+            <div style="margin-bottom:6px"><span class="badge badge-muted">Energy</span></div>
+            <div class="hero-side-title">OPEC+ Extends Output Cuts, Brent Rises Above $87</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:4px">FT • 2 hr ago</div>
+          </div>
+        </div>
+
+        <div class="hero-side-card">
+          <img class="hero-side-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=160&q=70" alt="">
+          <div class="hero-side-content">
+            <div style="margin-bottom:6px"><span class="badge badge-muted">AI</span></div>
+            <div class="hero-side-title">OpenAI GPT-5 Passes Bar Exam With 98th Percentile Score</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:4px">TechCrunch • 3 hr ago</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEWS TICKER
+     ============================================================ -->
+<div class="ticker-bar">
+  <div class="container">
+    <div class="ticker-inner">
+      <span class="ticker-label">Live</span>
+      <div class="ticker-divider"></div>
+      <div class="ticker-scroll">
+        <div class="ticker-track">
+          <span class="ticker-item">BTC <strong>$67,240</strong> <span style="color:rgba(255,255,255,0.5)">▲ +2.4%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">ETH <strong>$3,180</strong> <span style="color:rgba(255,255,255,0.5)">▲ +1.8%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">S&P 500 <strong>5,892</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.6%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">EUR/USD <strong>1.0847</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.2%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">Gold <strong>$2,312</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.8%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">Brent Oil <strong>$87.20</strong> <span style="color:rgba(255,255,255,0.5)">▲ +1.2%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">US10Y <strong>4.28%</strong> <span style="color:rgba(255,255,255,0.5)">▼ -0.03</span></span>
+          <span class="ticker-sep">|</span>
+          <!-- Duplicate for seamless loop -->
+          <span class="ticker-item">BTC <strong>$67,240</strong> <span style="color:rgba(255,255,255,0.5)">▲ +2.4%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">ETH <strong>$3,180</strong> <span style="color:rgba(255,255,255,0.5)">▲ +1.8%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">S&P 500 <strong>5,892</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.6%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">EUR/USD <strong>1.0847</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.2%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">Gold <strong>$2,312</strong> <span style="color:rgba(255,255,255,0.5)">▲ +0.8%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">Brent Oil <strong>$87.20</strong> <span style="color:rgba(255,255,255,0.5)">▲ +1.2%</span></span>
+          <span class="ticker-sep">|</span>
+          <span class="ticker-item">US10Y <strong>4.28%</strong> <span style="color:rgba(255,255,255,0.5)">▼ -0.03</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN 3-COLUMN GRID
+     ============================================================ -->
+<main>
+  <div class="container">
+    <div class="main-grid">
+
+      <!-- ====================================================
+           COLUMN 1: NEWS FEED
+           ==================================================== -->
+      <div class="news-col">
+
+        <div class="section-header">
+          <div>
+            <div class="section-label" style="margin-bottom:4px">Latest</div>
+            <h2 class="section-title">Global News Feed</h2>
+          </div>
+          <a href="#" class="section-link">
+            All stories
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Featured Card -->
+        <div class="article-card-large reveal" style="margin-bottom:16px">
+          <img class="article-img" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=700&q=75" alt="">
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="badge badge-primary">Finance</span>
+              <span class="badge badge-muted">Europe</span>
+              <span style="font-size:11px;color:var(--success);font-weight:600">● Positive</span>
+            </div>
+            <h3 class="article-title">ECB Maintains Hold as Eurozone Growth Surprises to the Upside</h3>
+            <p class="article-excerpt">The European Central Bank kept rates unchanged at 3.75%, citing improving growth indicators and easing core inflation across the euro area.</p>
+            <div class="article-footer">
+              <span>Financial Times</span>
+              <span style="display:flex;align-items:center;gap:6px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                4 min read
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-feed">
+
+          <!-- Article 1 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1620714223084-8fcacc2107b7?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-muted">Defense</span>
+                <span style="font-size:11px;color:var(--error);font-weight:600">● Negative</span>
+              </div>
+              <h3 class="article-title">Russia Deploys Additional S-500 Systems Near Finnish Border</h3>
+              <p class="article-excerpt">Finnish intelligence reports movement of advanced air defense systems in the Leningrad Oblast following NATO expansion.</p>
+              <div class="article-footer">
+                <span>Reuters • 22 min ago</span>
+                <span>4 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-primary">Technology</span>
+                <span style="font-size:11px;color:var(--success);font-weight:600">● Positive</span>
+              </div>
+              <h3 class="article-title">Anthropic's Claude 4 Achieves AGI-Level Performance on MMLU Benchmark</h3>
+              <p class="article-excerpt">New model surpasses human expert performance across 57 academic disciplines in the Massive Multitask Language Understanding evaluation.</p>
+              <div class="article-footer">
+                <span>Bloomberg • 45 min ago</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-muted">Energy</span>
+                <span style="font-size:11px;color:var(--success);font-weight:600">● Positive</span>
+              </div>
+              <h3 class="article-title">Germany Reaches 67% Renewable Energy Milestone Ahead of 2030 Target</h3>
+              <p class="article-excerpt">Wind and solar generation record sends Germany's renewable share to a record high, reducing dependence on LNG imports.</p>
+              <div class="article-footer">
+                <span>DW News • 1 hr ago</span>
+                <span>3 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-muted">Asia</span>
+                <span style="font-size:11px;color:var(--text-muted);font-weight:600">● Neutral</span>
+              </div>
+              <h3 class="article-title">Japan's Nikkei Hits 42,000 as Yen Weakens to 155 per Dollar</h3>
+              <p class="article-excerpt">Export-heavy index reaches new highs as BoJ signals continued patience on rate normalization despite inflation above 2%.</p>
+              <div class="article-footer">
+                <span>Nikkei Asia • 1.5 hr ago</span>
+                <span>4 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 5 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-muted">Americas</span>
+                <span style="font-size:11px;color:var(--error);font-weight:600">● Negative</span>
+              </div>
+              <h3 class="article-title">US Steel Tariffs Trigger WTO Dispute Filing From EU, Canada, Japan</h3>
+              <p class="article-excerpt">Three major trading blocs simultaneously challenge Washington's 25% steel tariff regime at the World Trade Organization.</p>
+              <div class="article-footer">
+                <span>WSJ • 2 hr ago</span>
+                <span>5 min read</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 6 -->
+          <div class="article-card-h reveal">
+            <img class="article-thumb" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=200&q=70" alt="">
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="badge badge-primary">Crypto</span>
+                <span style="font-size:11px;color:var(--success);font-weight:600">● Positive</span>
+              </div>
+              <h3 class="article-title">BlackRock's Bitcoin ETF Surpasses $50B AUM in Record Time</h3>
+              <p class="article-excerpt">IBIT becomes the fastest-growing ETF in history, with institutional inflows accelerating following Fed dovish pivot signals.</p>
+              <div class="article-footer">
+                <span>CoinDesk • 2.5 hr ago</span>
+                <span>3 min read</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================
+           COLUMN 2: TRENDING
+           ==================================================== -->
+      <div class="trending-col">
+        <div class="section-header" style="margin-bottom:16px">
+          <div>
+            <div class="section-label" style="margin-bottom:4px">Popular</div>
+            <h2 class="section-title">Trending</h2>
+          </div>
+        </div>
+
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:8px 20px;box-shadow:var(--shadow-subtle)">
+          <div class="trending-item">
+            <span class="trending-num">01</span>
+            <div>
+              <div class="trending-title">Fed Rate Cut Timeline: What Traders Are Pricing In</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">Bloomberg • 4.2K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">02</span>
+            <div>
+              <div class="trending-title">NVIDIA Blackwell Ultra Benchmarks vs. H100</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">The Verge • 3.8K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">03</span>
+            <div>
+              <div class="trending-title">Baltic Sea: Full Timeline of the Incident</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">Reuters • 3.1K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">04</span>
+            <div>
+              <div class="trending-title">Bitcoin ETF Flows: Daily Breakdown Chart</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">CoinDesk • 2.7K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">05</span>
+            <div>
+              <div class="trending-title">Germany Energy: How 67% Renewables Was Achieved</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">DW • 2.4K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">06</span>
+            <div>
+              <div class="trending-title">Claude 4 vs GPT-5: Side-by-Side Benchmark Analysis</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">TechCrunch • 2.2K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">07</span>
+            <div>
+              <div class="trending-title">WTO Steel Dispute: Which Countries Filed What</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">FT • 1.9K reads</div>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">08</span>
+            <div>
+              <div class="trending-title">Nikkei 42,000: Japanese Market Analysis</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:3px">Nikkei Asia • 1.7K reads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================
+           COLUMN 3: SIDEBAR WIDGETS
+           ==================================================== -->
+      <div class="sidebar">
+
+        <!-- Market Pulse -->
+        <div class="widget" style="margin-bottom:16px">
+          <div class="widget-header">
+            <span class="widget-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              Market Pulse
+            </span>
+            <span class="live-dot"></span>
+          </div>
+          <div class="widget-body" style="padding-top:4px;padding-bottom:4px">
+            <div class="market-card">
+              <div><div class="market-name">Bitcoin</div><div style="font-size:11px;color:var(--text-muted)">BTC/USD</div></div>
+              <div style="text-align:right"><div class="market-price">$67,240</div><div class="market-change up">+2.4%</div></div>
+            </div>
+            <div class="market-card">
+              <div><div class="market-name">Ethereum</div><div style="font-size:11px;color:var(--text-muted)">ETH/USD</div></div>
+              <div style="text-align:right"><div class="market-price">$3,180</div><div class="market-change up">+1.8%</div></div>
+            </div>
+            <div class="market-card">
+              <div><div class="market-name">S&P 500</div><div style="font-size:11px;color:var(--text-muted)">INDEX</div></div>
+              <div style="text-align:right"><div class="market-price">5,892</div><div class="market-change up">+0.6%</div></div>
+            </div>
+            <div class="market-card">
+              <div><div class="market-name">Gold</div><div style="font-size:11px;color:var(--text-muted)">XAU/USD</div></div>
+              <div style="text-align:right"><div class="market-price">$2,312</div><div class="market-change up">+0.8%</div></div>
+            </div>
+            <div class="market-card">
+              <div><div class="market-name">EUR/USD</div><div style="font-size:11px;color:var(--text-muted)">FOREX</div></div>
+              <div style="text-align:right"><div class="market-price">1.0847</div><div class="market-change up">+0.2%</div></div>
+            </div>
+            <div class="market-card">
+              <div><div class="market-name">Brent Oil</div><div style="font-size:11px;color:var(--text-muted)">WTI</div></div>
+              <div style="text-align:right"><div class="market-price">$87.20</div><div class="market-change up">+1.2%</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- World Activity Map -->
+        <div class="widget" style="margin-bottom:16px">
+          <div class="widget-header">
+            <span class="widget-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Active Regions
+            </span>
+          </div>
+          <div class="widget-body">
+            <div class="world-map-container">
+              <svg class="world-map-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="800" height="400" fill="var(--surface-2)" rx="4"/>
+                <!-- Simplified continent shapes -->
+                <!-- North America -->
+                <path d="M80 80 L200 70 L230 100 L220 160 L190 190 L160 200 L130 180 L100 160 L70 130 Z" fill="var(--primary-light)" stroke="var(--primary)" stroke-width="1"/>
+                <!-- South America -->
+                <path d="M150 210 L200 200 L210 230 L200 280 L180 310 L160 300 L140 270 L140 240 Z" fill="var(--surface-hover)" stroke="var(--border)" stroke-width="1"/>
+                <!-- Europe -->
+                <path d="M340 60 L420 55 L430 90 L410 110 L380 115 L350 100 L330 80 Z" fill="#FEF3C7" stroke="#D97706" stroke-width="1"/>
+                <!-- Africa -->
+                <path d="M340 130 L410 125 L420 170 L410 230 L380 260 L350 250 L330 210 L330 160 Z" fill="var(--surface-hover)" stroke="var(--border)" stroke-width="1"/>
+                <!-- Asia -->
+                <path d="M430 50 L620 45 L640 100 L600 140 L540 150 L470 130 L440 100 Z" fill="var(--primary-light)" stroke="var(--primary)" stroke-width="1" opacity="0.7"/>
+                <!-- Middle East -->
+                <path d="M420 110 L480 105 L490 140 L470 155 L430 150 L415 130 Z" fill="#FEE2E2" stroke="var(--error)" stroke-width="1"/>
+                <!-- Russia -->
+                <path d="M390 30 L620 25 L630 55 L570 65 L430 60 L380 50 Z" fill="var(--surface-2)" stroke="var(--border)" stroke-width="1"/>
+                <!-- Australia -->
+                <path d="M560 230 L650 220 L670 270 L640 300 L580 295 L555 265 Z" fill="var(--surface-hover)" stroke="var(--border)" stroke-width="1"/>
+                <!-- Activity dots -->
+                <circle cx="140" cy="130" r="5" fill="var(--primary)" opacity="0.8"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>
+                <circle cx="380" cy="80" r="5" fill="#D97706" opacity="0.8"><animate attributeName="r" values="4;7;4" dur="2.5s" repeatCount="indefinite"/></circle>
+                <circle cx="455" cy="125" r="6" fill="var(--error)" opacity="0.8"><animate attributeName="r" values="5;8;5" dur="1.8s" repeatCount="indefinite"/></circle>
+                <circle cx="520" cy="95" r="4" fill="var(--primary)" opacity="0.7"><animate attributeName="r" values="3;6;3" dur="3s" repeatCount="indefinite"/></circle>
+              </svg>
+            </div>
+            <div class="region-list">
+              <div class="region-item">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div class="region-dot" style="background:var(--error)"></div>
+                  <span class="region-label">Middle East</span>
+                </div>
+                <span class="region-status" style="color:var(--error)">High Activity</span>
+              </div>
+              <div class="region-item">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div class="region-dot" style="background:#D97706"></div>
+                  <span class="region-label">Europe</span>
+                </div>
+                <span class="region-status" style="color:#D97706">Elevated</span>
+              </div>
+              <div class="region-item">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div class="region-dot" style="background:var(--primary)"></div>
+                  <span class="region-label">Asia-Pacific</span>
+                </div>
+                <span class="region-status" style="color:var(--primary)">Monitoring</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Predictions -->
+        <div class="widget">
+          <div class="widget-header">
+            <span class="widget-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              Predictions
+            </span>
+            <span style="font-size:11px;color:var(--text-muted)">Polymarket</span>
+          </div>
+          <div class="widget-body" style="padding-top:4px">
+            <div class="prediction-item">
+              <div class="prediction-q">Fed cuts rates before June 2026?</div>
+              <div class="prediction-bar-wrap"><div class="prediction-bar-fill" style="width:74%"></div></div>
+              <div class="prediction-meta"><span>$2.1M volume</span><span class="prediction-pct">74%</span></div>
+            </div>
+            <div class="prediction-item">
+              <div class="prediction-q">Bitcoin reaches $100K in 2026?</div>
+              <div class="prediction-bar-wrap"><div class="prediction-bar-fill" style="width:58%"></div></div>
+              <div class="prediction-meta"><span>$8.4M volume</span><span class="prediction-pct">58%</span></div>
+            </div>
+            <div class="prediction-item">
+              <div class="prediction-q">NATO activates Article 5 in 2026?</div>
+              <div class="prediction-bar-wrap"><div class="prediction-bar-fill" style="width:12%;background:var(--error)"></div></div>
+              <div class="prediction-meta"><span>$1.7M volume</span><span class="prediction-pct" style="color:var(--error)">12%</span></div>
+            </div>
+            <div class="prediction-item">
+              <div class="prediction-q">OpenAI IPO in 2026?</div>
+              <div class="prediction-bar-wrap"><div class="prediction-bar-fill" style="width:41%"></div></div>
+              <div class="prediction-meta"><span>$3.2M volume</span><span class="prediction-pct">41%</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============================================================
+     REGIONAL STORIES SECTION
+     ============================================================ -->
+<section class="regional-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label" style="margin-bottom:4px">By Region</div>
+        <h2 class="section-title">Regional Intelligence</h2>
+      </div>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="filter-pills">
+      <button class="pill active" onclick="filterRegion(this, 'all')">Global</button>
+      <button class="pill" onclick="filterRegion(this, 'europe')">Europe</button>
+      <button class="pill" onclick="filterRegion(this, 'americas')">Americas</button>
+      <button class="pill" onclick="filterRegion(this, 'asia')">Asia-Pacific</button>
+      <button class="pill" onclick="filterRegion(this, 'mideast')">Middle East</button>
+      <button class="pill" onclick="filterRegion(this, 'cis')">CIS / Russia</button>
+    </div>
+
+    <!-- Regional Cards Grid -->
+    <div class="regional-grid" id="regional-grid">
+
+      <div class="region-card reveal" data-region="europe">
+        <div class="region-card-header">
+          <span class="region-flag">🇪🇺</span>
+          <span class="region-title">Europe</span>
+          <span class="badge badge-muted" style="margin-left:auto">Elevated</span>
+        </div>
+        <p class="region-headline">ECB holds rates as Eurozone GDP growth surprises at 0.4% QoQ, beating forecasts of 0.2%.</p>
+        <div class="region-footer">
+          <span>FT • 45 min ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">4 stories →</span>
+        </div>
+      </div>
+
+      <div class="region-card reveal" data-region="americas">
+        <div class="region-card-header">
+          <span class="region-flag">🇺🇸</span>
+          <span class="region-title">Americas</span>
+          <span class="badge badge-breaking" style="margin-left:auto">Active</span>
+        </div>
+        <p class="region-headline">Fed signals rate pivot. WTO tariff disputes filed by EU, Canada, Japan against US steel measures.</p>
+        <div class="region-footer">
+          <span>WSJ • 2 hr ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">7 stories →</span>
+        </div>
+      </div>
+
+      <div class="region-card reveal" data-region="asia">
+        <div class="region-card-header">
+          <span class="region-flag">🌏</span>
+          <span class="region-title">Asia-Pacific</span>
+          <span class="badge badge-muted" style="margin-left:auto">Monitor</span>
+        </div>
+        <p class="region-headline">Nikkei hits 42,000. South Korea export data beats expectations. Taiwan semiconductor output record.</p>
+        <div class="region-footer">
+          <span>Nikkei • 1.5 hr ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">5 stories →</span>
+        </div>
+      </div>
+
+      <div class="region-card reveal" data-region="mideast">
+        <div class="region-card-header">
+          <span class="region-flag">🌍</span>
+          <span class="region-title">Middle East</span>
+          <span class="badge badge-breaking" style="margin-left:auto">High</span>
+        </div>
+        <p class="region-headline">Ceasefire negotiations in Gaza enter critical phase. Saudi Arabia-Israel normalization talks resume.</p>
+        <div class="region-footer">
+          <span>AP News • 30 min ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">9 stories →</span>
+        </div>
+      </div>
+
+      <div class="region-card reveal" data-region="cis">
+        <div class="region-card-header">
+          <span class="region-flag">🇷🇺</span>
+          <span class="region-title">CIS / Russia</span>
+          <span class="badge badge-breaking" style="margin-left:auto">Active</span>
+        </div>
+        <p class="region-headline">S-500 deployment near Finnish border. Russian ruble stabilizes at 88 per USD on oil revenue.</p>
+        <div class="region-footer">
+          <span>Reuters • 22 min ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">6 stories →</span>
+        </div>
+      </div>
+
+      <div class="region-card reveal" data-region="africa">
+        <div class="region-card-header">
+          <span class="region-flag">🌍</span>
+          <span class="region-title">Africa</span>
+          <span class="badge badge-muted" style="margin-left:auto">Monitor</span>
+        </div>
+        <p class="region-headline">IMF approves $4.2B Nigeria credit facility. Sudan humanitarian corridor reopens after agreement.</p>
+        <div class="region-footer">
+          <span>Reuters Africa • 3 hr ago</span>
+          <span class="text-brand" style="font-size:12px;font-weight:600">3 stories →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GLOBAL INTELLIGENCE BRIEF
+     ============================================================ -->
+<section class="intel-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label" style="margin-bottom:4px">AI Analysis</div>
+        <h2 class="section-title">Global Intelligence Brief</h2>
+      </div>
+      <a href="#" class="section-link">
+        Full analysis
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="intel-grid">
+
+      <div class="intel-card reveal">
+        <div class="intel-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        </div>
+        <div class="intel-badge intel-badge-geo" style="margin-bottom:12px">Geopolitics</div>
+        <div class="intel-title">NATO Eastern Flank: Escalation Risk Assessment</div>
+        <div class="intel-summary">Baltic Sea incident raises escalation risk to medium-high. Russian deployment patterns suggest positioning rather than intent to engage. NATO Article 5 activation probability remains below 15% in 30-day window.</div>
+        <div class="intel-footer">
+          <span>Updated 1 hr ago</span>
+          <span style="color:var(--primary);font-weight:600;font-size:12px">Read brief →</span>
+        </div>
+      </div>
+
+      <div class="intel-card reveal">
+        <div class="intel-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="intel-badge intel-badge-market" style="margin-bottom:12px">Markets</div>
+        <div class="intel-title">Fed Pivot: Sector Rotation Playbook for Q2 2026</div>
+        <div class="intel-summary">Rate cut cycle typically benefits REITs, utilities, and growth tech. History suggests 6-12% S&P outperformance in the 12 months following the first cut. Small-cap value showing unusual divergence from historical patterns.</div>
+        <div class="intel-footer">
+          <span>Updated 45 min ago</span>
+          <span style="color:var(--primary);font-weight:600;font-size:12px">Read brief →</span>
+        </div>
+      </div>
+
+      <div class="intel-card reveal">
+        <div class="intel-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="intel-badge intel-badge-security" style="margin-bottom:12px">Security</div>
+        <div class="intel-title">AI Arms Race: Defense Implications of GPT-5 / Claude 4</div>
+        <div class="intel-summary">Frontier model capabilities now exceed classified benchmarks from 18 months ago. Pentagon AI safety board convening emergency review. Dual-use risk assessment elevated following autonomous reasoning demonstrations.</div>
+        <div class="intel-footer">
+          <span>Updated 2 hr ago</span>
+          <span style="color:var(--primary);font-weight:600;font-size:12px">Read brief →</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:12px">
+          <div class="nav-logo-mark" style="width:28px;height:28px;border-radius:6px">
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M3 14V4l4 6 4-6v10" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="9" r="2" fill="white"/>
+            </svg>
+          </div>
+          NOVIQ
+        </a>
+        <p>Global intelligence platform. Real-time analysis of markets, geopolitics, technology, and energy.</p>
+        <div style="display:flex;gap:10px">
+          <a href="#" class="icon-btn" style="width:32px;height:32px;border:1px solid var(--border)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="icon-btn" style="width:32px;height:32px;border:1px solid var(--border)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="icon-btn" style="width:32px;height:32px;border:1px solid var(--border)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Coverage</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Markets & Finance</a>
+          <a href="#" class="footer-link">Geopolitics</a>
+          <a href="#" class="footer-link">Technology & AI</a>
+          <a href="#" class="footer-link">Energy & Resources</a>
+          <a href="#" class="footer-link">Defense & Security</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Tools</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Market Dashboard</a>
+          <a href="#" class="footer-link">Geopolitical Map</a>
+          <a href="#" class="footer-link">Prediction Markets</a>
+          <a href="#" class="footer-link">AI Analysis</a>
+          <a href="#" class="footer-link">Portfolio Tracker</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Company</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">About NOVIQ</a>
+          <a href="#" class="footer-link">Methodology</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Press Kit</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Cookie Policy</a>
+          <a href="#" class="footer-link">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 NOVIQ Intelligence. All rights reserved.</span>
+      <span style="display:flex;align-items:center;gap:16px">
+        <span>Not financial advice</span>
+        <span>•</span>
+        <span>Data delayed 15 min</span>
+        <span>•</span>
+        <a href="#" style="color:var(--primary)">API Status</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SEARCH MODAL
+     ============================================================ -->
+<div class="search-overlay" id="search-overlay" onclick="handleSearchOverlayClick(event)">
+  <div class="search-modal" onclick="event.stopPropagation()">
+    <div class="search-input-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input class="search-input" type="text" placeholder="Search news, markets, topics..." id="search-input" autofocus>
+      <button onclick="toggleSearch()" style="color:var(--text-muted);font-size:12px;padding:4px 8px;border-radius:4px;border:1px solid var(--border)">ESC</button>
+    </div>
+    <div class="search-suggestions">
+      <div class="search-category">Trending searches</div>
+      <div class="search-suggestion-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        Federal Reserve rate cut 2026
+      </div>
+      <div class="search-suggestion-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        NATO Baltic Sea incident
+      </div>
+      <div class="search-suggestion-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        NVIDIA Blackwell GPU benchmarks
+      </div>
+      <div class="search-suggestion-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Bitcoin ETF institutional flows
+      </div>
+      <div class="search-category">Categories</div>
+      <div class="search-suggestion-item">
+        <span class="badge badge-primary" style="font-size:10px">Markets</span>
+        Financial markets & economics
+      </div>
+      <div class="search-suggestion-item">
+        <span class="badge badge-muted" style="font-size:10px">Geopolitics</span>
+        International relations & security
+      </div>
+    </div>
+    <div class="search-footer">
+      <span><kbd class="kbd">↵</kbd> to search</span>
+      <span><kbd class="kbd">ESC</kbd> to close</span>
+      <span><kbd class="kbd">↑↓</kbd> to navigate</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  // THEME TOGGLE
+  // ============================================================
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('theme-icon-sun').style.display = isDark ? 'none' : 'block';
+    document.getElementById('theme-icon-moon').style.display = isDark ? 'block' : 'none';
+    localStorage.setItem('noviq-theme', isDark ? 'light' : 'dark');
+  }
+
+  // Restore theme
+  (function() {
+    const saved = localStorage.getItem('noviq-theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('theme-icon-sun').style.display = 'block';
+      document.getElementById('theme-icon-moon').style.display = 'none';
+    }
+  })();
+
+  // ============================================================
+  // LANGUAGE SELECTOR
+  // ============================================================
+  const langs = [
+    { flag: '🇺🇸', code: 'EN' },
+    { flag: '🇩🇪', code: 'DE' },
+    { flag: '🇷🇺', code: 'RU' },
+  ];
+  let langIdx = 0;
+  function cycleLang() {
+    langIdx = (langIdx + 1) % langs.length;
+    document.getElementById('lang-flag').textContent = langs[langIdx].flag;
+    document.getElementById('lang-code').textContent = langs[langIdx].code;
+  }
+
+  // ============================================================
+  // SEARCH MODAL
+  // ============================================================
+  function toggleSearch() {
+    const overlay = document.getElementById('search-overlay');
+    const isActive = overlay.classList.toggle('active');
+    if (isActive) {
+      setTimeout(() => document.getElementById('search-input').focus(), 50);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function handleSearchOverlayClick(e) {
+    if (e.target === document.getElementById('search-overlay')) toggleSearch();
+  }
+
+  // Keyboard shortcut: Cmd+K / Ctrl+K
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      toggleSearch();
+    }
+    if (e.key === 'Escape') {
+      const overlay = document.getElementById('search-overlay');
+      if (overlay.classList.contains('active')) toggleSearch();
+    }
+  });
+
+  // ============================================================
+  // REGION FILTER
+  // ============================================================
+  function filterRegion(btn, region) {
+    // Update pill states
+    document.querySelectorAll('.filter-pills .pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter cards
+    document.querySelectorAll('#regional-grid .region-card').forEach(card => {
+      if (region === 'all' || card.dataset.region === region) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // ============================================================
+  // SCROLL REVEAL
+  // ============================================================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
